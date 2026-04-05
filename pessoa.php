@@ -32,7 +32,7 @@ class Pessoa {
     }
 
     public function setNascimento($nascimento) {
-        $this->nascimento = $nascimento
+        $this->nascimento = $nascimento;
     }
 
 }
