@@ -2,7 +2,7 @@
 
 require_once "pessoa.php";
 
-class Médico extends Pessoa {
+class Medico extends Pessoa {
     private $crm;
     private $especialidade;
 
