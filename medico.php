@@ -20,7 +20,7 @@ class Medico extends Pessoa {
     }
 
     public function getEspecialidade() {
-        return $this->nascimento;
+        return $this->especialidade;
     }
     public function setEspecialidade($especialidade) {
         $this->especialidade = $especialidade;
