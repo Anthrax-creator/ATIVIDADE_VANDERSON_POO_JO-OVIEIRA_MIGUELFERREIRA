@@ -1,6 +1,6 @@
 <?php
 
-required onde "pessoa.php";
+require_once "pessoa.php";
 
 class Médico extends Pessoa {
     private $crm;
@@ -9,7 +9,7 @@ class Médico extends Pessoa {
     public function __construct($nome, $sexo, $nascimento, $crm, $especialidade) {
         parent::__construct($nome, $sexo, $nascimento);
         $this->crm = $crm;
-        $this->especialidade-> $especialidade;
+        $this->especialidade = $especialidade;
     }
 
     public function getCrm() {
@@ -19,11 +19,11 @@ class Médico extends Pessoa {
         $this->crm = $crm;
     }
 
-    public function getNascimento() {
+    public function getEspecialidade() {
         return $this->nascimento;
     }
-    public function setNascimento($nascimento) {
-        $this->nascimento = $nascimento;
+    public function setEspecialidade($especialidade) {
+        $this->especialidade = $especialidade;
     }
 
 }
