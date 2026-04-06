@@ -72,8 +72,6 @@ if (isset($_POST['pac_nome'])) {
 
     // Salvar tudo novamente (IMPORTANTE: sem FILE_APPEND)
     file_put_contents($arquivo, serialize($lista));
-
-    echo "<br><strong>Paciente salvo com sucesso no arquivo!</strong>";
 }
 
 ?>
