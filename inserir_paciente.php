@@ -7,7 +7,7 @@
 </head>
 <body>
     
-<h1>Novo paciente:</h1>
+<h1>Novo paciente:</h1><hr>
 
 <form method="post">
     <fieldset>
@@ -25,7 +25,7 @@
         <label>Enfermidade(s):</label><br>
         <input type="text" name="pac_enfermidade"><br><br>
     </fieldset>
-
+    <br>
     <input type="submit" value="Cadastrar">
 </form>
 

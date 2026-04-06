@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de pacientes</title>
 </head>
 <body>
     
+<h1>Lista de pacientes cadastrados:</h1><br><hr>
+
 <?php
 require_once "paciente.php";
 $arquivo = "contas.txt";
