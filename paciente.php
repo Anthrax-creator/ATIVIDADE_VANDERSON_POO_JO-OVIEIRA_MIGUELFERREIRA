@@ -11,7 +11,11 @@ class Paciente extends Pessoa {
     }
 
     public function getEnfermidadesPreexistentes() {
-        return $this->enfermidadesPreexistentes;
+        if ($this->enfermidadesPreexistentes == "") {
+            return "----";
+        } else {
+            return $this->enfermidadesPreexistentes;
+        }
     }
     public function setEnfermidadesPreexistentes($enfermidadesPreexistentes) {
         $this->enfermidadesPreexistentes = $enfermidadesPreexistentes;
