@@ -24,6 +24,7 @@ foreach ($paciente as $index => $c) {
         echo "<p><strong>Sexo:</strong> " . $c->getSexo() . "</p>";
         echo "<p><strong>Nascimento:</strong> " . $c->getNascimento() . "</p>";
         echo "<p><strong>Enfermidade:</strong> " . $c->getEnfermidadesPreexistentes() . "</p>";
+        echo "<br><hr>";
     }
     
 }
