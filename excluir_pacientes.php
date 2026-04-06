@@ -65,3 +65,4 @@ foreach ($paciente as $index=>$c) {
 
 </body>
 </html>
+
