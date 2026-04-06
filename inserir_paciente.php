@@ -56,6 +56,12 @@ if (
     echo "<p><strong>Enfermidade:</strong> " . $paciente->getEnfermidadesPreexistentes() . "</p>";
 }
 
+/*INSERIR DADOS EM .TXT==========================================================================*/
+$arquivo = "contas.txt";
+$pacineteSerializada = serialize($paciente);
+file_put_contents($arquivo, $pacineteSerializada . PHP_EOL, FILE_APPEND);
+echo "<strong>Conta gravada com sucesso</strong>";
+
 ?>
 
 </body>
