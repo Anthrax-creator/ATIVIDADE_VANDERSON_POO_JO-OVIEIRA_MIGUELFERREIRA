@@ -29,6 +29,10 @@
     <input type="submit" value="Cadastrar">
 </form>
 
+<p>
+    <a href="index.php">VOLTAR</a>
+</p>
+
 <hr>
 
 <?php

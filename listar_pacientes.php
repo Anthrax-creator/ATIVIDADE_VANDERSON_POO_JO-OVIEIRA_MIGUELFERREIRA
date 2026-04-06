@@ -9,6 +9,11 @@
     
 <h1>Lista de pacientes cadastrados:</h1><br><hr>
 
+<p>
+    <a href="index.php">VOLTAR</a>
+</p><hr>
+
+
 <?php
 require_once "paciente.php";
 $arquivo = "contas.txt";

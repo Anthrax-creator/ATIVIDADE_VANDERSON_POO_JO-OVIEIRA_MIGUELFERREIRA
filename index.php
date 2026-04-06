@@ -11,15 +11,15 @@
 
 <p>
     <a>--></a>
-    <a href="inserir_paciente.php" target="_blank">Inserir um novo paciente.</a>
+    <a href="inserir_paciente.php">Inserir um novo paciente.</a>
 </p>
 <p>
     <a>--></a>
-    <a href="listar_pacientes.php" target="_blank">Listar pacientes atuais.</a>
+    <a href="listar_pacientes.php">Listar pacientes atuais.</a>
 </p>
 <p>
     <a>--></a>
-    <a href="excluir_pacientes.php" target="_blank">Excluir pacientes atuais.</a>
+    <a href="excluir_pacientes.php">Excluir pacientes atuais.</a>
 </p>
 
 </body>

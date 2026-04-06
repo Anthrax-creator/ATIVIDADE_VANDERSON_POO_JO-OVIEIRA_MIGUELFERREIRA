@@ -34,7 +34,11 @@ if (isset($_POST['excluir'])) {
 }
 ?>
 
-<h1>Excluir conta de paciente:</h1>
+<h1>Excluir conta de paciente:</h1><br><hr>
+
+<p>
+    <a href="index.php">VOLTAR</a>
+</p><hr>
 
 <h2>Lista de pacientes:</h2>
 
