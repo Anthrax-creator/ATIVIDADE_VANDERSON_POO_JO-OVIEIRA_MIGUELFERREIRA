@@ -20,10 +20,10 @@ if (file_exists($arquivo)) {
 
 foreach ($paciente as $index => $c) {
     if ($c instanceof Paciente){
-        echo "<p><strong>Paciente:</strong> " . $paciente->getNome() . "</p>";
-        echo "<p><strong>Sexo:</strong> " . $paciente->getSexo() . "</p>";
-        echo "<p><strong>Nascimento:</strong> " . $paciente->getNascimento() . "</p>";
-        echo "<p><strong>Enfermidade:</strong> " . $paciente->getEnfermidadesPreexistentes() . "</p>";
+        echo "<p><strong>Paciente:</strong> " . $c->getNome() . "</p>";
+        echo "<p><strong>Sexo:</strong> " . $c->getSexo() . "</p>";
+        echo "<p><strong>Nascimento:</strong> " . $c->getNascimento() . "</p>";
+        echo "<p><strong>Enfermidade:</strong> " . $c->getEnfermidadesPreexistentes() . "</p>";
     }
     
 }

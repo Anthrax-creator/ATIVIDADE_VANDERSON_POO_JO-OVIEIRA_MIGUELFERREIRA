@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,44 +23,58 @@
         <input type="text" name="pac_nascimento" required><br><br>
 
         <label>Enfermidade(s):</label><br>
-        <input type="text" name="pac_enfermidade">
+        <input type="text" name="pac_enfermidade"><br><br>
     </fieldset>
 
-    <br>
     <input type="submit" value="Cadastrar">
-    
 </form>
 
 <hr>
 
 <?php
 
-if (
-    isset($_POST['pac_nome'])
-) {
+if (isset($_POST['pac_nome'])) {
 
     require_once "paciente.php";
 
-
-    $paciente = new Paciente (
+    // Criar objeto paciente
+    $paciente = new Paciente(
         $_POST['pac_nome'],
         $_POST['pac_sexo'],
         $_POST['pac_nascimento'],
-        $_POST['pac_enfermidade'],
+        $_POST['pac_enfermidade']
     );
 
+    // Mostrar na tela
     echo "<h2>Paciente cadastrado com sucesso</h2>";
     echo "<p><strong>Paciente:</strong> " . $paciente->getNome() . "</p>";
     echo "<p><strong>Sexo:</strong> " . $paciente->getSexo() . "</p>";
     echo "<p><strong>Nascimento:</strong> " . $paciente->getNascimento() . "</p>";
     echo "<p><strong>Enfermidade:</strong> " . $paciente->getEnfermidadesPreexistentes() . "</p>";
-}
 
-/*INSERIR DADOS EM .TXT==========================================================================*/
-$arquivo = "contas.txt";
-$pacineteSerializada = serialize($paciente);
-file_put_contents($arquivo, $pacineteSerializada . PHP_EOL, FILE_APPEND);
-echo "<strong>Conta gravada com sucesso</strong>";
+    // ================= SALVAR NO ARQUIVO =================
+    $arquivo = "contas.txt";
+    $lista = [];
+
+    // Se já existir dados, carregar
+    if (file_exists($arquivo) && filesize($arquivo) > 0) {
+        $dados = file_get_contents($arquivo);
+        $lista = unserialize($dados);
+    }
+
+    // Garantir que é array
+    if (!is_array($lista)) {
+        $lista = [];
+    }
+
+    // Adicionar novo paciente
+    $lista[] = $paciente;
+
+    // Salvar tudo novamente (IMPORTANTE: sem FILE_APPEND)
+    file_put_contents($arquivo, serialize($lista));
+
+    echo "<br><strong>Paciente salvo com sucesso no arquivo!</strong>";
+}
 
 ?>
 
