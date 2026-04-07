@@ -19,6 +19,10 @@
 </p>
 <p>
     <a>--></a>
+    <a href="editar_paciente.php">Editar pacientes atuais.</a>
+</p>
+<p>
+    <a>--></a>
     <a href="excluir_pacientes.php">Excluir pacientes atuais.</a>
 </p>
 
