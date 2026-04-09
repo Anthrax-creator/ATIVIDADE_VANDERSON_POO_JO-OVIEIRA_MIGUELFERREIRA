@@ -1,5 +1,7 @@
 <?php
 
+// CLASSE PAI
+
 class Pessoa {
     protected $nome;
     protected $sexo;

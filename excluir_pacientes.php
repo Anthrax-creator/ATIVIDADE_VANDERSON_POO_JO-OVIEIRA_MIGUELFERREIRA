@@ -35,6 +35,7 @@
 
         file_put_contents($arquivo, serialize($paciente));
 
+        // ISSO AQUI FAZ COM QUE O SITE N EXCLUA NINGUEM QUANDO RECARREGA A PÁGINA
         header("Location: excluir_pacientes.php");
         exit;
     }

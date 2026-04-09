@@ -46,7 +46,6 @@
 
         require_once "paciente.php";
 
-        // Criar objeto paciente
         $paciente = new Paciente(
             $_POST['pac_nome'],
             $_POST['pac_sexo'],
@@ -54,7 +53,6 @@
             $_POST['pac_enfermidade']
         );
 
-        // Mostrar na tela
         echo "<h2>Paciente cadastrado com sucesso</h2>";
         echo "<p><strong>Paciente:</strong> " . $paciente->getNome() . "</p>";
         echo "<p><strong>Sexo:</strong> " . $paciente->getSexo() . "</p>";
@@ -65,21 +63,19 @@
         $arquivo = "contas.txt";
         $lista = [];
 
-        // Se já existir dados, carregar
+        // CARREGAR DADOS QUE JA POSSAM EXISTIR
         if (file_exists($arquivo) && filesize($arquivo) > 0) {
             $dados = file_get_contents($arquivo);
             $lista = unserialize($dados);
         }
 
-        // Garantir que é array
         if (!is_array($lista)) {
             $lista = [];
         }
 
-        // Adicionar novo paciente
         $lista[] = $paciente;
 
-        // Salvar tudo novamente (IMPORTANTE: sem FILE_APPEND)
+        // SALVAR TUDO DE NOVO 
         file_put_contents($arquivo, serialize($lista));
     }
 

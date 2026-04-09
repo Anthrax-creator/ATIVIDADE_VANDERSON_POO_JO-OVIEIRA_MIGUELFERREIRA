@@ -2,6 +2,8 @@
 
 require_once "pessoa.php";
 
+// CLASSE DE MÉDICOS
+
 class Medico extends Pessoa {
     private $crm;
     private $especialidade;

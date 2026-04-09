@@ -1,5 +1,7 @@
 <?php
 
+// CLASSE DE PACIENTE
+
 require_once "pessoa.php";
 
 class Paciente extends Pessoa {

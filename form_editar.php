@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar paciente</title>
 </head>
 <body style="background-color: cadetblue;">
     
@@ -63,7 +63,7 @@
             <label>Data de nascimento:</label><br>
             <input type="text" name="nascimento" value="<?php echo $paciente->getNascimento(); ?>"><br><br>
 
-            <label>Enfermidade atual(is):</label><br>
+            <label>Enfermidade(s) atual(is):</label><br>
             <input type="text" name="enfermidade" value="<?php echo $paciente->getEnfermidadesPreexistentes(); ?>"><br><br>
 
             <button type="submit" name="salvar">Salvar</button>
