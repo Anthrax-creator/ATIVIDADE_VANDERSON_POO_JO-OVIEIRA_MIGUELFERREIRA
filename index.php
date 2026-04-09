@@ -11,20 +11,13 @@
 
 <p>
     <a>--></a>
-    <a href="inserir_paciente.php">Inserir um novo paciente.</a>
+    <a href="menuPacientes.php">PACIENTES.</a>
 </p>
+<hr>
 <p>
     <a>--></a>
-    <a href="listar_pacientes.php">Listar pacientes atuais.</a>
+    <a href="menuMedicos.php">MÉDICOS.</a>
 </p>
-<p>
-    <a>--></a>
-    <a href="editar_paciente.php">Editar pacientes atuais.</a>
-</p>
-<p>
-    <a>--></a>
-    <a href="excluir_pacientes.php">Excluir pacientes atuais.</a>
-</p>
-
+<hr>
 </body>
 </html>

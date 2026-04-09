@@ -10,7 +10,7 @@
 <h1>Lista de pacientes cadastrados:</h1><br><hr>
 
 <p>
-    <a href="index.php">VOLTAR</a>
+    <a href="menuPacientes.php">VOLTAR</a>
 </p><hr><hr>
 
 
