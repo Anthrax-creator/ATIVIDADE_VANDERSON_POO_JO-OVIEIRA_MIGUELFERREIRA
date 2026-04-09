@@ -1,72 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="background-color: cadetblue;">
     
-<?php
-require_once "paciente.php";
+<div style="background-color: white; width: 80%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 20px;">
 
-$arquivo = "contas.txt";
-$pacientes = [];
+    <center>
+        <h2>Editar paciente:</h2><hr><br>
+    </center>
 
-if (file_exists($arquivo)) {
-    $pacientes = unserialize(file_get_contents($arquivo));
-}
+    <?php
+    require_once "paciente.php";
 
-$indice = $_GET['indice'];
-$paciente = $pacientes[$indice];
+    $arquivo = "contas.txt";
+    $pacientes = [];
 
-if (isset($_POST['salvar'])) {
+    if (file_exists($arquivo)) {
+        $pacientes = unserialize(file_get_contents($arquivo));
+    }
 
-    $indice = $_POST['indice'];
+    $indice = $_GET['indice'];
+    $paciente = $pacientes[$indice];
 
-    $pacientes[$indice]->setNome($_POST['nome']);
-    $pacientes[$indice]->setSexo($_POST['sexo']);
-    $pacientes[$indice]->setNascimento($_POST['nascimento']);
-    $pacientes[$indice]->setEnfermidadesPreexistentes($_POST['enfermidade']);
+    if (isset($_POST['salvar'])) {
 
-    file_put_contents($arquivo, serialize($pacientes));
+        $indice = $_POST['indice'];
 
-    header("Location: editar_paciente.php");
-    exit;
-}
+        $pacientes[$indice]->setNome($_POST['nome']);
+        $pacientes[$indice]->setSexo($_POST['sexo']);
+        $pacientes[$indice]->setNascimento($_POST['nascimento']);
+        $pacientes[$indice]->setEnfermidadesPreexistentes($_POST['enfermidade']);
 
-if (isset($_POST['cancelar'])) {
-    header("Location: editar_paciente.php");
-}
+        file_put_contents($arquivo, serialize($pacientes));
 
-?>
+        header("Location: editar_paciente.php");
+        exit;
+    }
 
-<h2>Editar paciente:</h2><hr><br>
+    if (isset($_POST['cancelar'])) {
+        header("Location: editar_paciente.php");
+    }
 
-<form method="post">
+    ?>
 
-    <fieldset>
-        <legend>Editar dados do paciente:</legend><br>
+    <form method="post">
 
-        <input type="hidden" name="indice" value="<?php echo $indice; ?>">
+        <fieldset>
+            <legend>Editar dados do paciente:</legend><br>
 
-        <label>Nome:</label><br>
-        <input type="text" name="nome" value="<?php echo $paciente->getNome(); ?>"><br><br>
+            <input type="hidden" name="indice" value="<?php echo $indice; ?>">
 
-        <label>Sexo:</label><br>
-        <input type="text" name="sexo" value="<?php echo $paciente->getSexo(); ?>"><br><br>
+            <label>Nome:</label><br>
+            <input type="text" name="nome" value="<?php echo $paciente->getNome(); ?>"><br><br>
 
-        <label>Data de nascimento:</label><br>
-        <input type="text" name="nascimento" value="<?php echo $paciente->getNascimento(); ?>"><br><br>
+            <label>Sexo:</label><br>
+            <input type="text" name="sexo" value="<?php echo $paciente->getSexo(); ?>"><br><br>
 
-        <label>Enfermidade atual(is):</label><br>
-        <input type="text" name="enfermidade" value="<?php echo $paciente->getEnfermidadesPreexistentes(); ?>"><br><br>
+            <label>Data de nascimento:</label><br>
+            <input type="text" name="nascimento" value="<?php echo $paciente->getNascimento(); ?>"><br><br>
 
-        <button type="submit" name="salvar">Salvar</button>
-        <button type="submit" name="cancelar">Cancelar</button>
-    </fieldset>
+            <label>Enfermidade atual(is):</label><br>
+            <input type="text" name="enfermidade" value="<?php echo $paciente->getEnfermidadesPreexistentes(); ?>"><br><br>
 
-</form>
+            <button type="submit" name="salvar">Salvar</button>
+            <button type="submit" name="cancelar">Cancelar</button>
+        </fieldset>
+
+    </form>
+
+</div>
 
 </body>
 </html>

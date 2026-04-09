@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de hospital</title>
 </head>
-<body>
+<body style="background-color: cadetblue;">
 
-<h1><b>Menu principal:</b></h1><br><hr>
+<div style="background-color: white; width: 75%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 20px;">
+    
+    <center>
+        <h1><b>Menu principal:</b></h1><br><hr>
+    </center>
 
-<p>
-    <a>--></a>
-    <a href="menuPacientes.php">PACIENTES.</a>
-</p>
-<hr>
-<p>
-    <a>--></a>
-    <a href="menuMedicos.php">MÉDICOS.</a>
-</p>
-<hr>
+    <p>
+        <a>--></a>
+        <a href="menuPacientes.php">PACIENTES.</a>
+    </p>
+    <hr>
+    <p>
+        <a>--></a>
+        <a href="menuMedicos.php">MÉDICOS.</a>
+    </p>
+    <hr>
+
+</div>
+
 </body>
 </html>

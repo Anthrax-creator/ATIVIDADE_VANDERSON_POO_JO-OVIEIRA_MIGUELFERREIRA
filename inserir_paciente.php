@@ -5,81 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inserir paciente</title>
 </head>
-<body>
+<body style="background-color: cadetblue;">
     
-<h1>Novo paciente:</h1><br><hr>
+<div style="background-color: white; width: 80%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 20px;">
+    
+    <center>
+        <h1>Novo paciente:</h1><br><hr>
+    </center>
 
-<p>
-    <a href="menuPacientes.php">VOLTAR</a>
-</p><hr><hr><br>
+    <p>
+        <a href="menuPacientes.php">VOLTAR</a>
+    </p><hr><hr><br>
 
-<form method="post">
-    <fieldset>
-        <legend>Dados do paciente</legend><br>
+    <form method="post">
+        <fieldset>
+            <legend>Dados do paciente</legend><br>
 
-        <label>Nome do paciente:</label><br>
-        <input type="text" name="pac_nome" required><br><br>
+            <label>Nome do paciente:</label><br>
+            <input type="text" name="pac_nome" required><br><br>
 
-        <label>Sexo:</label><br>
-        <input type="text" name="pac_sexo" required><br><br>
+            <label>Sexo:</label><br>
+            <input type="text" name="pac_sexo" required><br><br>
 
-        <label>Data de nascimento:</label><br>
-        <input type="text" name="pac_nascimento" required><br><br>
+            <label>Data de nascimento:</label><br>
+            <input type="text" name="pac_nascimento" required><br><br>
 
-        <label>Enfermidade(s) atual(is):</label><br>
-        <input type="text" name="pac_enfermidade"><br><br>
+            <label>Enfermidade(s) atual(is):</label><br>
+            <input type="text" name="pac_enfermidade"><br><br>
 
-        <input type="submit" value="Cadastrar">
-    </fieldset>
-    <br>
-</form>
+            <input type="submit" value="Cadastrar">
+        </fieldset>
+        <br>
+    </form>
 
-<hr>
+    <hr>
 
-<?php
+    <?php
 
-if (isset($_POST['pac_nome'])) {
+    if (isset($_POST['pac_nome'])) {
 
-    require_once "paciente.php";
+        require_once "paciente.php";
 
-    // Criar objeto paciente
-    $paciente = new Paciente(
-        $_POST['pac_nome'],
-        $_POST['pac_sexo'],
-        $_POST['pac_nascimento'],
-        $_POST['pac_enfermidade']
-    );
+        // Criar objeto paciente
+        $paciente = new Paciente(
+            $_POST['pac_nome'],
+            $_POST['pac_sexo'],
+            $_POST['pac_nascimento'],
+            $_POST['pac_enfermidade']
+        );
 
-    // Mostrar na tela
-    echo "<h2>Paciente cadastrado com sucesso</h2>";
-    echo "<p><strong>Paciente:</strong> " . $paciente->getNome() . "</p>";
-    echo "<p><strong>Sexo:</strong> " . $paciente->getSexo() . "</p>";
-    echo "<p><strong>Nascimento:</strong> " . $paciente->getNascimento() . "</p>";
-    echo "<p><strong>Enfermidade:</strong> " . $paciente->getEnfermidadesPreexistentes() . "</p>";
+        // Mostrar na tela
+        echo "<h2>Paciente cadastrado com sucesso</h2>";
+        echo "<p><strong>Paciente:</strong> " . $paciente->getNome() . "</p>";
+        echo "<p><strong>Sexo:</strong> " . $paciente->getSexo() . "</p>";
+        echo "<p><strong>Nascimento:</strong> " . $paciente->getNascimento() . "</p>";
+        echo "<p><strong>Enfermidade:</strong> " . $paciente->getEnfermidadesPreexistentes() . "</p>";
 
-    // ================= SALVAR NO ARQUIVO =================
-    $arquivo = "contas.txt";
-    $lista = [];
-
-    // Se já existir dados, carregar
-    if (file_exists($arquivo) && filesize($arquivo) > 0) {
-        $dados = file_get_contents($arquivo);
-        $lista = unserialize($dados);
-    }
-
-    // Garantir que é array
-    if (!is_array($lista)) {
+        // ================= SALVAR NO ARQUIVO =================
+        $arquivo = "contas.txt";
         $lista = [];
+
+        // Se já existir dados, carregar
+        if (file_exists($arquivo) && filesize($arquivo) > 0) {
+            $dados = file_get_contents($arquivo);
+            $lista = unserialize($dados);
+        }
+
+        // Garantir que é array
+        if (!is_array($lista)) {
+            $lista = [];
+        }
+
+        // Adicionar novo paciente
+        $lista[] = $paciente;
+
+        // Salvar tudo novamente (IMPORTANTE: sem FILE_APPEND)
+        file_put_contents($arquivo, serialize($lista));
     }
 
-    // Adicionar novo paciente
-    $lista[] = $paciente;
+    ?>
 
-    // Salvar tudo novamente (IMPORTANTE: sem FILE_APPEND)
-    file_put_contents($arquivo, serialize($lista));
-}
+</div>
 
-?>
+
 
 </body>
 </html>
