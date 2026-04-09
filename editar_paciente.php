@@ -31,7 +31,7 @@ if (isset($_POST['editar'])) {
 <h1>Editar conta de paciente:</h1><br><hr>
 
 <p>
-    <a href="index.php">CANCELAR</a>
+    <a href="index.php">VOLTAR</a>
 </p><hr><hr>
 
 <h2>Lista de pacientes:</h2><hr>

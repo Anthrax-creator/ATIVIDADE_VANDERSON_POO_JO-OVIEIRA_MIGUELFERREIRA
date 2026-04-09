@@ -10,7 +10,7 @@
 <h1>Novo paciente:</h1><br><hr>
 
 <p>
-    <a href="index.php">CANCELAR</a>
+    <a href="index.php">VOLTAR</a>
 </p><hr><hr><br>
 
 <form method="post">
@@ -28,9 +28,10 @@
 
         <label>Enfermidade(s) atual(is):</label><br>
         <input type="text" name="pac_enfermidade"><br><br>
+
+        <input type="submit" value="Cadastrar">
     </fieldset>
     <br>
-    <input type="submit" value="Cadastrar">
 </form>
 
 <hr>
