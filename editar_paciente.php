@@ -20,9 +20,11 @@ if (file_exists($arquivo)) {
 }
 
 if (isset($_POST['editar'])) {
-    
-    
 
+    $indice = $_POST['indice'];
+
+    header("Location: form_editar.php?indice=" . $indice);
+    exit;
 }
 ?>
 
@@ -58,10 +60,6 @@ foreach ($paciente as $index=>$c) {
 <input type="submit" name="editar" value="Editar">
 
 </form>
-
-
-
-
 
 </body>
 </html>

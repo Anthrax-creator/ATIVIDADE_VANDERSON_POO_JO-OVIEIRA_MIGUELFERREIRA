@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<?php
+require_once "paciente.php";
+
+$arquivo = "contas.txt";
+$pacientes = [];
+
+if (file_exists($arquivo)) {
+    $pacientes = unserialize(file_get_contents($arquivo));
+}
+
+$indice = $_GET['indice'];
+$paciente = $pacientes[$indice];
+
+if (isset($_POST['salvar'])) {
+
+    $indice = $_POST['indice'];
+
+    $pacientes[$indice]->setNome($_POST['nome']);
+    $pacientes[$indice]->setSexo($_POST['sexo']);
+    $pacientes[$indice]->setNascimento($_POST['nascimento']);
+    $pacientes[$indice]->setEnfermidadesPreexistentes($_POST['enfermidade']);
+
+    file_put_contents($arquivo, serialize($pacientes));
+
+    header("Location: editar_paciente.php");
+    exit;
+}
+
+?>
+
+<h2>Editar paciente</h2>
+
+<form method="post">
+
+<input type="hidden" name="indice" value="<?php echo $indice; ?>">
+
+Nome: <input type="text" name="nome" value="<?php echo $paciente->getNome(); ?>"><br>
+
+Sexo: <input type="text" name="sexo" value="<?php echo $paciente->getSexo(); ?>"><br>
+
+Nascimento: <input type="text" name="nascimento" value="<?php echo $paciente->getNascimento(); ?>"><br>
+
+Enfermidade: <input type="text" name="enfermidade" value="<?php echo $paciente->getEnfermidadesPreexistentes(); ?>"><br>
+
+<button type="submit" name="salvar">Salvar</button>
+
+</form>
+
+</body>
+</html>
