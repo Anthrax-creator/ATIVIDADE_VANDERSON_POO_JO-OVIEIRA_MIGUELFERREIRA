@@ -11,7 +11,7 @@
 
 <p>
     <a href="index.php">VOLTAR</a>
-</p><hr>
+</p><hr><hr>
 
 
 <?php
@@ -27,11 +27,11 @@ if (file_exists($arquivo)) {
 
 foreach ($paciente as $index => $c) {
     if ($c instanceof Paciente){
-        echo "<p><strong>Paciente:</strong> " . $c->getNome() . "</p>";
+        echo "<p><strong>-->Paciente:</strong> " . $c->getNome() . "</p>";
         echo "<p><strong>Sexo:</strong> " . $c->getSexo() . "</p>";
         echo "<p><strong>Nascimento:</strong> " . $c->getNascimento() . "</p>";
         echo "<p><strong>Enfermidade:</strong> " . $c->getEnfermidadesPreexistentes() . "</p>";
-        echo "<br><hr>";
+        echo "<hr>";
     }
     
 }

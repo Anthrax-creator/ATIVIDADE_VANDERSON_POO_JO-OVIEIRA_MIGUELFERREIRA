@@ -35,23 +35,36 @@ if (isset($_POST['salvar'])) {
     exit;
 }
 
+if (isset($_POST['cancelar'])) {
+    header("Location: editar_paciente.php");
+}
+
 ?>
 
-<h2>Editar paciente</h2>
+<h2>Editar paciente:</h2><hr><br>
 
 <form method="post">
 
-<input type="hidden" name="indice" value="<?php echo $indice; ?>">
+    <fieldset>
+        <legend>Editar dados do paciente:</legend><br>
 
-Nome: <input type="text" name="nome" value="<?php echo $paciente->getNome(); ?>"><br>
+        <input type="hidden" name="indice" value="<?php echo $indice; ?>">
 
-Sexo: <input type="text" name="sexo" value="<?php echo $paciente->getSexo(); ?>"><br>
+        <label>Nome:</label><br>
+        <input type="text" name="nome" value="<?php echo $paciente->getNome(); ?>"><br><br>
 
-Nascimento: <input type="text" name="nascimento" value="<?php echo $paciente->getNascimento(); ?>"><br>
+        <label>Sexo:</label><br>
+        <input type="text" name="sexo" value="<?php echo $paciente->getSexo(); ?>"><br><br>
 
-Enfermidade: <input type="text" name="enfermidade" value="<?php echo $paciente->getEnfermidadesPreexistentes(); ?>"><br>
+        <label>Data de nascimento:</label><br>
+        <input type="text" name="nascimento" value="<?php echo $paciente->getNascimento(); ?>"><br><br>
 
-<button type="submit" name="salvar">Salvar</button>
+        <label>Enfermidade atual(is):</label><br>
+        <input type="text" name="enfermidade" value="<?php echo $paciente->getEnfermidadesPreexistentes(); ?>"><br><br>
+
+        <button type="submit" name="salvar">Salvar</button>
+        <button type="submit" name="cancelar">Cancelar</button>
+    </fieldset>
 
 </form>
 

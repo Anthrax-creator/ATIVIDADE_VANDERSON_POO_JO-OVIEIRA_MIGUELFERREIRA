@@ -7,7 +7,11 @@
 </head>
 <body>
     
-<h1>Novo paciente:</h1><hr>
+<h1>Novo paciente:</h1><br><hr>
+
+<p>
+    <a href="index.php">CANCELAR</a>
+</p><hr><hr><br>
 
 <form method="post">
     <fieldset>
@@ -22,16 +26,12 @@
         <label>Data de nascimento:</label><br>
         <input type="text" name="pac_nascimento" required><br><br>
 
-        <label>Enfermidade(s):</label><br>
+        <label>Enfermidade(s) atual(is):</label><br>
         <input type="text" name="pac_enfermidade"><br><br>
     </fieldset>
     <br>
     <input type="submit" value="Cadastrar">
 </form>
-
-<p>
-    <a href="index.php">VOLTAR</a>
-</p>
 
 <hr>
 

@@ -31,18 +31,19 @@ if (isset($_POST['editar'])) {
 <h1>Editar conta de paciente:</h1><br><hr>
 
 <p>
-    <a href="index.php">VOLTAR</a>
-</p><hr>
+    <a href="index.php">CANCELAR</a>
+</p><hr><hr>
 
-<h2>Lista de pacientes:</h2>
+<h2>Lista de pacientes:</h2><hr>
 
 <?php
 foreach ($paciente as $index=>$c) {
     if ($c instanceof Paciente) {
-        echo "<p><strong>->Paciente: </strong>" . $c->getNome() . "</p>";
+        echo "<p><strong>-->Paciente: </strong>" . $c->getNome() . "</p>";
         echo "<p><strong>Sexo:</strong> " . $c->getSexo() . "</p>";
         echo "<p><strong>Nascimento:</strong> " . $c->getNascimento() . "</p>";
-        echo "<p><strong>Enfermidade:</strong> " . $c->getEnfermidadesPreexistentes() . "</p><br>";
+        echo "<p><strong>Enfermidade:</strong> " . $c->getEnfermidadesPreexistentes() . "</p>";
+        echo "<hr>";
     }
 }
 ?>
