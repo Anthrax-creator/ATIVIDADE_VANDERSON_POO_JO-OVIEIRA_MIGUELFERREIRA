@@ -53,7 +53,7 @@
             $_POST['pac_enfermidade']
         );
 
-        echo "<h2>Paciente cadastrado com sucesso</h2>";
+        echo "<h2>Paciente cadastrado com sucesso!</h2>";
         echo "<p><strong>Paciente:</strong> " . $paciente->getNome() . "</p>";
         echo "<p><strong>Sexo:</strong> " . $paciente->getSexo() . "</p>";
         echo "<p><strong>Nascimento:</strong> " . $paciente->getNascimento() . "</p>";
