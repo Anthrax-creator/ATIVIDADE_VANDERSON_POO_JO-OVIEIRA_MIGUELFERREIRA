@@ -9,7 +9,7 @@
 
 <!-- MENU DE MEDICOS PARA MELHORAR ORGANIZAÇÃO -->
 
-<div style="background-color: white; width: 75%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 20px;">
+<div style="background-color: white; width: 75%; margin: auto; padding: 20px; border: 3px solid #757575ff; border-radius: 20px;">
     
     <center>
         <h1><b>Menu principal (médicos):</b></h1><br><hr>
