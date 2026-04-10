@@ -52,6 +52,8 @@
     }
     ?>
 
+    <!-- MESMA IDEIA DE EXCLUIR, PORÉM QUANDO A PESSOA É SELECIONADA O USUÁRIO VAI A OUTRA PÁGINA PARA EDITA-LA -->
+
     <form method="post">
 
     <select name="indice" required>

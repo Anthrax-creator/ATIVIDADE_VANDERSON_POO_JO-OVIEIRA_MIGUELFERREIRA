@@ -7,6 +7,8 @@
 </head>
 <body style="background-color: cadetblue;">
 
+<!-- MESMO ESQUEMA DE MÉDICOS SÓ QUE PARA PACIENTES -->
+
 <div style="background-color: white; width: 75%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 20px;">
     
     <center>
