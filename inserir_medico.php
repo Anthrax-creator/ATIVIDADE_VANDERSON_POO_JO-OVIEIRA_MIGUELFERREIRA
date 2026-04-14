@@ -28,10 +28,10 @@
             <input type="text" name="med_sexo" required><br><br>
 
             <label>Data de nascimento:</label><br>
-            <input type="text" name="med_nascimento" required><br><br>
+            <input type="date" name="med_nascimento" required><br><br>
 
             <label>CRM:</label><br>
-            <input type="text" name="med_crm"><br><br>
+            <input type="number" name="med_crm"><br><br>
 
             <label>Especialidade(s):</label><br>
             <input type="text" name="med_especialidade"><br><br>
@@ -39,13 +39,53 @@
             <input type="submit" value="Cadastrar">
         </fieldset>
         <br>
-
-
-        
     </form>
-
     <hr>
-    
+
+    <?php
+
+    if (isset($_POST['med_nome'])) {
+
+        require_once "medico.php";
+
+        $medico = new Medico(
+            $_POST["med_nome"],
+            $_POST["med_sexo"],
+            $_POST["med_nascimento"],
+            $_POST["med_crm"],
+            $_POST["med_especialidade"]
+        );
+
+        echo "<h2>Médico cadastrado com sucesso!</h2>";
+        echo "<p><strong>Médico:</strong> " . $medico->getNome() . "</p>";
+        echo "<p><strong>Sexo:</strong> " . $medico->getSexo() . "</p>";
+        echo "<p><strong>Nascimento:</strong> " . $medico->getNascimento() . "</p>";
+        echo "<p><strong>CRM:</strong> " . $medico->getCrm() . "</p>";
+        echo "<p><strong>Especialidade:</strong> " . $medico->getEspecialidade() . "</p>";
+
+
+        // ================= SALVAR NO ARQUIVO =================
+        $arquivo = "contas.txt";
+        $lista = [];
+
+        // CARREGAR DADOS QUE JA POSSAM EXISTIR
+        if (file_exists($arquivo) && filesize($arquivo) > 0) {
+            $dados = file_get_contents($arquivo);
+            $lista = unserialize($dados);
+        }
+
+        if (!is_array($lista)) {
+            $lista = [];
+        }
+
+        $lista[] = $medico;
+
+        // SALVAR TUDO DE NOVO 
+        file_put_contents($arquivo, serialize($lista));
+    }
+
+    ?>
+
 </div>
 
 

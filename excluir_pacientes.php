@@ -63,9 +63,11 @@
 
     <select name="indice" required>
     <?php foreach ($paciente as $index=>$c) { ?>
-        <option value="<?php echo $index; ?>">
-            <?php echo $c->getNome(); ?>
-        </option>
+        <?php if ($c instanceof Paciente) { ?>
+            <option value="<?php echo $index; ?>">
+                <?php echo $c->getNome(); ?>
+            </option>
+        <?php } ?>
     <?php } ?>
     </select>
 

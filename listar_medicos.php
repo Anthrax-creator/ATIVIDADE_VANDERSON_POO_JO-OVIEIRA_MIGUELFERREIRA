@@ -16,9 +16,29 @@
     <p>
         <a href="menuMedicos.php">VOLTAR</a>
     </p><hr><hr>
-
-
     
+    <?php
+    require_once "medico.php";
+    $arquivo = "contas.txt";
+
+    $medico = [];
+
+    if (file_exists($arquivo)) {
+        $dados = file_get_contents($arquivo);
+        $medico = (unserialize ($dados));
+    }
+
+    foreach ($medico as $index => $c) {
+        if ($c instanceof Medico){
+            echo "<p><strong>-->Médico:</strong> " . $c->getNome() . "</p>";
+            echo "<p><strong>Sexo:</strong> " . $c->getSexo() . "</p>";
+            echo "<p><strong>Nascimento:</strong> " . $c->getNascimento() . "</p>";
+            echo "<p><strong>CRM:</strong> " . $c->getCrm() . "</p>";
+            echo "<p><strong>Especialidade:</strong> " . $c->getEspecialidade() . "</p>";
+            echo "<hr>";
+        }   
+    }
+    ?>
 </div>
 
 

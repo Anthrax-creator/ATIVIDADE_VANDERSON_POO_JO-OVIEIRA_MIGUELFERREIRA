@@ -28,7 +28,7 @@
             <input type="text" name="pac_sexo" required><br><br>
 
             <label>Data de nascimento:</label><br>
-            <input type="text" name="pac_nascimento" required><br><br>
+            <input type="date" name="pac_nascimento" required><br><br>
 
             <label>Enfermidade(s) atual(is):</label><br>
             <input type="text" name="pac_enfermidade"><br><br>

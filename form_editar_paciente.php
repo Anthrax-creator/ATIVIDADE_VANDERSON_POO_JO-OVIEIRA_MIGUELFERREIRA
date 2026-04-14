@@ -61,7 +61,7 @@
             <input type="text" name="sexo" value="<?php echo $paciente->getSexo(); ?>"><br><br>
 
             <label>Data de nascimento:</label><br>
-            <input type="text" name="nascimento" value="<?php echo $paciente->getNascimento(); ?>"><br><br>
+            <input type="date" name="nascimento" value="<?php echo $paciente->getNascimento(); ?>"><br><br>
 
             <label>Enfermidade(s) atual(is):</label><br>
             <input type="text" name="enfermidade" value="<?php echo $paciente->getEnfermidadesPreexistentes(); ?>"><br><br>

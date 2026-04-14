@@ -29,7 +29,7 @@
 
         $indice = $_POST['indice'];
 
-        header("Location: form_editar.php?indice=" . $indice);
+        header("Location: form_editar_paciente.php?indice=" . $indice);
         exit;
     }
     ?>
@@ -58,9 +58,11 @@
 
     <select name="indice" required>
     <?php foreach ($paciente as $index=>$c) { ?>
-        <option value="<?php echo $index; ?>">
-            <?php echo $c->getNome(); ?>
-        </option>
+        <?php if ($c instanceof Paciente) { ?>
+            <option value="<?php echo $index; ?>">
+                <?php echo $c->getNome(); ?>
+            </option>
+        <?php } ?>
     <?php } ?>
     </select>
 
